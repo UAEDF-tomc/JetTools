@@ -71,7 +71,6 @@ private:
   TH1F* h_cutbasedId = new TH1F("cutbasedId",";cutbasedId",8,-0.5,7.5);
   TH1F* h_fullId = new TH1F("fullId",";fullId",8,-0.5,7.5);
 
-  TH1F* h_qgMLP = new TH1F("qgMLP",";qgMLP",25,0,1);
   TH1F* h_qgLikelihood = new TH1F("qgLikelihood",";qgLikelihood",25,0,1);
 
   TH1F* h_QjetsVolatility = new TH1F("QjetsVolatility",";QjetsVolatility",25,-1,2);
@@ -135,7 +134,6 @@ jetAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       int fullId = jet_iter->userInt("pileupJetIdEvaluator:fullId");
 
       float qgLikelihood = jet_iter->userFloat("QGTagger:qgLikelihood");
-      float qgMLP = jet_iter->userFloat("QGTagger:qgMLP");
 
       float QjetsVolatility = jet_iter->userFloat("QJetsAdder:QjetsVolatility");
 
@@ -150,7 +148,6 @@ jetAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       h_fullId->Fill(fullId);
       
       h_qgLikelihood->Fill(qgLikelihood);
-      h_qgMLP->Fill(qgMLP);
 
       h_QjetsVolatility->Fill(QjetsVolatility);
 
@@ -168,7 +165,6 @@ jetAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       std::cout<<"fullId: "<<fullId<<std::endl;
 
       std::cout<<"qgLikelihood: "<<qgLikelihood<<std::endl;
-      std::cout<<"qgMLP: "<<qgMLP<<std::endl;
 
       std::cout<<"QjetsVolatility: "<<QjetsVolatility<<std::endl;
 
@@ -211,7 +207,6 @@ jetAnalyzer::endJob()
   h_fullId->Write();
 
   h_qgLikelihood->Write();
-  h_qgMLP->Write();
 
   h_QjetsVolatility->Write();
 

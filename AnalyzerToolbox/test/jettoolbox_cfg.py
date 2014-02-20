@@ -48,7 +48,7 @@ process.QJetsAdder.src=inputCollection
 
 process.patJets.userData.userFloats.src = ['Njettiness:tau1','Njettiness:tau2','Njettiness:tau3',
                                            'pileupJetIdEvaluator:cutbasedDiscriminant','pileupJetIdEvaluator:fullDiscriminant',
-                                           'QGTagger:qgLikelihood','QGTagger:qgMLP',
+                                           'QGTagger:qgLikelihood',
                                            'QJetsAdder:QjetsVolatility']
 
 process.patJets.userData.userInts.src = ['pileupJetIdEvaluator:cutbasedId','pileupJetIdEvaluator:fullId']
