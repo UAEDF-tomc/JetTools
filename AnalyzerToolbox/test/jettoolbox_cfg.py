@@ -34,8 +34,8 @@ process.pileupJetIdEvaluator.jets = inputCollection
 
 process.load('RecoJets.JetProducers.QGTagger_RecoJets_cff')
 process.QGTagger.srcJets = inputCollection
-process.QGTagger.useCHS  = cms.untracked.bool(True)
-process.QGTagger.jec     = cms.untracked.string('ak5PFL1FastL2L3')
+process.QGTagger.useCHS  = cms.bool(True)
+process.QGTagger.jec     = cms.string('ak5PFL1FastL2L3')
 
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #QJetsAdder
@@ -77,4 +77,4 @@ process.maxEvents.input = 500
 #                                         ##
 process.out.fileName = 'jettoolbox.root'
 #                                         ##
-#   process.options.wantSummary = False   ##  (to suppress the long output at the end of the job)
+process.options.wantSummary = True 	  ##  (to suppress the long output at the end of the job)
